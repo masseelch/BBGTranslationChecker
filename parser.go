@@ -2,6 +2,7 @@ package checker
 
 import (
 	"encoding/xml"
+	"fmt"
 	"io/ioutil"
 	"path/filepath"
 )
@@ -19,6 +20,7 @@ func Parse(truth string, dir string) (*File, []*File, error) {
 	// Truth
 	t, err := parseFile(filepath.Join(dir, truth))
 	if err != nil {
+		fmt.Printf("Error parsing %s: %s\n", truth, err)
 		return nil, nil, err
 	}
 
@@ -33,6 +35,7 @@ func Parse(truth string, dir string) (*File, []*File, error) {
 		if f.Name() != truth && filepath.Ext(f.Name()) == ".xml" {
 			t, err := parseFile(filepath.Join(dir, f.Name()))
 			if err != nil {
+				fmt.Printf("Error parsing %s: %s\n", truth, err)
 				return nil, nil, err
 			}
 
