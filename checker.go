@@ -17,8 +17,11 @@ var (
 type (
 	// A report for a translation file.
 	Report struct {
+		File *File
 		// All tags that occur more than once.
 		DuplicateTags Duplicates
+		// All tags that occur in the translation file but not the truth.
+		ObsoleteTags []string
 		// All found language declarations.
 		LanguageTags []string
 		// Tags that do not appear in the given file but do in the truth.
@@ -56,6 +59,7 @@ func Check(tf *File, cfs []*File) (Reports, error) {
 // c: File to check
 func report(tf *File, cf *File) (*Report, error) {
 	r := new(Report)
+	r.File = cf
 
 	// duplicate tags / lang
 	r.duplicatesCheck(cf)
@@ -64,6 +68,9 @@ func report(tf *File, cf *File) (*Report, error) {
 	if tf == nil {
 		return r, nil
 	}
+
+	// obsolete translations
+	r.obsoletesCheck(tf, cf)
 
 	// missing translations
 	r.translationsCheck(tf, cf)
@@ -89,6 +96,23 @@ func (r *Report) duplicatesCheck(f *File) {
 	r.LanguageTags = lang.keys()
 }
 
+func (r *Report) obsoletesCheck(tf *File, cf *File) {
+	r.ObsoleteTags = make([]string, 0)
+
+	// For every tag in the check file check if there exists an entry in the truth file.
+	// If there is no tag found mark the tag as obsolete.
+	for _, ct := range cf.Translations {
+		if tf.Translations.LookupByTag(ct.Tag) == nil {
+			r.ObsoleteTags = append(r.ObsoleteTags, ct.Tag)
+		}
+	}
+
+	// Clean up
+	if len(r.ObsoleteTags) == 0 {
+		r.ObsoleteTags = nil
+	}
+}
+
 func (r *Report) translationsCheck(tf *File, cf *File) {
 	r.MissingTags = make([]string, 0)
 	r.MissingTranslations = make([]string, 0)
@@ -106,7 +130,6 @@ func (r *Report) translationsCheck(tf *File, cf *File) {
 			continue
 		}
 
-		// Translation tag found. Check if is yet untranslated.
 		if strings.Contains(strings.ToLower(ct.Message), translationMarker) {
 			r.MissingTranslations = append(r.MissingTranslations, tt.Tag)
 		}
@@ -142,7 +165,10 @@ func (r *Report) translationsCheck(tf *File, cf *File) {
 		r.MissingTags = nil
 	}
 	if len(r.MissingTranslations) == 0 {
-		r.MissingTranslations= nil
+		r.MissingTranslations = nil
+	}
+	if len(r.NumericDifferences) == 0 {
+		r.NumericDifferences = nil
 	}
 }
 

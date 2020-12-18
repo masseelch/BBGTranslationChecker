@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/davecgh/go-spew/spew"
 	checker "github.com/masseelch/bbg-translation-checker"
 	"github.com/spf13/cobra"
+	"os"
 )
 
 var (
@@ -21,6 +21,11 @@ var (
 				panic(err)
 			}
 
+			outputFlagValue, err := cmd.Flags().GetString("output")
+			if err != nil {
+				panic(err)
+			}
+
 			t, ts, err := checker.Parse(truthFlagValue, dirFlagValue)
 			if err != nil {
 				panic(err)
@@ -32,7 +37,23 @@ var (
 				panic(err)
 			}
 
-			spew.Dump(rs)
+			// If no output path is given just print to stdout.
+			if outputFlagValue == "" {
+				if err := rs.FDump(os.Stdout); err != nil {
+					panic(err)
+				}
+				return
+			}
+
+			// If a path is given dump to file.
+			f, err := os.Create(outputFlagValue)
+			if err != nil {
+				panic(err)
+			}
+			defer f.Close()
+			if err := rs.FDump(f); err != nil {
+				panic(err)
+			}
 		},
 	}
 )
