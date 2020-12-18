@@ -28,6 +28,12 @@ func (r Report) dump() []byte {
 		return buf.Bytes()
 	}
 
+	// Report XML Error
+	if r.XMLError != nil {
+		buf.WriteString(fmt.Sprintf("\tInvalid XML:\n\t\t%s\n\n", r.XMLError))
+		return buf.Bytes()
+	}
+
 	// Duplicates
 	if r.DuplicateTags != nil {
 		buf.WriteString("\tDuplicate Entries:\n")
@@ -90,5 +96,6 @@ func (r Report) perfect() bool {
 		r.LanguageTags == nil &&
 		r.MissingTags == nil &&
 		r.MissingTranslations == nil &&
-		r.NumericDifferences == nil
+		r.NumericDifferences == nil &&
+		r.XMLError == nil
 }

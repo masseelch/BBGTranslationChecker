@@ -18,6 +18,8 @@ type (
 	// A report for a translation file.
 	Report struct {
 		File *File
+		// Parsing XML error
+		XMLError error
 		// All tags that occur more than once.
 		DuplicateTags Duplicates
 		// All tags that occur in the translation file but not the truth.
@@ -60,6 +62,12 @@ func Check(tf *File, cfs []*File) (Reports, error) {
 func report(tf *File, cf *File) (*Report, error) {
 	r := new(Report)
 	r.File = cf
+
+	// If there has been error while parsing report it.
+	if r.File.Error != nil {
+		r.XMLError = cf.Error
+		return r, nil
+	}
 
 	// duplicate tags / lang
 	r.duplicatesCheck(cf)

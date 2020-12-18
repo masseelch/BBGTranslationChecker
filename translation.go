@@ -3,6 +3,7 @@ package checker
 type (
 	File struct {
 		Filename     string
+		Error        error
 		Translations Translations
 	}
 	Translation struct {
