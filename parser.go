@@ -7,24 +7,43 @@ import (
 )
 
 type (
-	File struct {
-		Filename     string
-		Translations []Translation
-	}
-	Translation struct {
-		Tag     string `xml:",attr"`
-		Lang    string `xml:"Language,attr"`
-		Message string `xml:"Text"`
-	}
 	localizedText struct {
-		Translations []Translation `xml:"Replace"`
+		Translations Translations `xml:"Replace"`
 	}
 	gameDate struct {
 		LocalizedText localizedText `xml:"LocalizedText"`
 	}
 )
 
-func ParseFile(filename string) (*File, error) {
+func Parse(truth string, dir string) (*File, []*File, error) {
+	// Truth
+	t, err := parseFile(filepath.Join(dir, truth))
+	if err != nil {
+		return nil, nil, err
+	}
+
+	// Translations
+	fs, err := ioutil.ReadDir(dir)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	ts := make([]*File, 0)
+	for _, f := range fs {
+		if f.Name() != truth {
+			t, err := parseFile(filepath.Join(dir, f.Name()))
+			if err != nil {
+				return nil, nil, err
+			}
+
+			ts = append(ts, t)
+		}
+	}
+
+	return t, ts, nil
+}
+
+func parseFile(filename string) (*File, error) {
 	b, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return nil, err

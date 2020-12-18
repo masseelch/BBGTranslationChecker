@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
 	<LocalizedText>
-		<Replace Tag="LOC_BUILDING_BARRACKS_DESCRIPTION" Language="de_DE">
+		<!--Removed for testing-->
+		<!--<Replace Tag="LOC_BUILDING_BARRACKS_DESCRIPTION" Language="de_DE">
 			<Text>+50 % Kampferfahrung für alle Nahkampf- und Fernkampfeinheiten an Land, die in dieser Stadt ausgebildet werden.[NEWLINE][NEWLINE]Kann nicht in einem Lagerbezirk gebaut werden, in dem bereits Stallungen sind.</Text>
-		</Replace>
+		</Replace>-->
+
+		<!--Changed for testting (from 50 to 30)-->
 		<Replace Tag="LOC_BUILDING_STABLE_DESCRIPTION" Language="de_DE">
-			<Text>+50 % Kampferfahrung für alle Einheiten der Kavallerie-Klasse, die in dieser Stadt ausgebildet werden.[NEWLINE][NEWLINE]Kann nicht in einem Lagerbezirk gebaut werden, in dem schon eine Kaserne ist.</Text>
+			<Text>+30 % Kampferfahrung für alle Einheiten der Kavallerie-Klasse, die in dieser Stadt ausgebildet werden.[NEWLINE][NEWLINE]Kann nicht in einem Lagerbezirk gebaut werden, in dem schon eine Kaserne ist.</Text>
 		</Replace>
 		<Replace Tag="LOC_BUILDING_MILITARY_ACADEMY_DESCRIPTION" Language="de_DE">
 			<Text>+50 % Kampferfahrung für alle Landeinheiten, die in dieser Stadt ausgebildet werden.[NEWLINE][NEWLINE]Ermöglicht die unmittelbare Ausbildung von Korps und Armeen. Die Ausbildungskosten von Korps und Armeen sinken um 25%.</Text>
