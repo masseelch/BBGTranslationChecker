@@ -1,7 +1,7 @@
 english.xml:
 	Duplicate Entries:
-		- LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION: 2 times
 		- LOC_PROJECT_ECOURT_FESTIVAL_DESCRIPTION: 2 times
+		- LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION: 2 times
 
 french.xml:
 	Obsolete Translations:
