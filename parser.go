@@ -30,7 +30,7 @@ func Parse(truth string, dir string) (*File, []*File, error) {
 
 	ts := make([]*File, 0)
 	for _, f := range fs {
-		if f.Name() != truth {
+		if f.Name() != truth && filepath.Ext(f.Name()) == ".xml" {
 			t, err := parseFile(filepath.Join(dir, f.Name()))
 			if err != nil {
 				return nil, nil, err
