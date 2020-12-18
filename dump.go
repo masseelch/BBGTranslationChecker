@@ -83,7 +83,7 @@ func (r Report) dump() []byte {
 	if r.NumericDifferences != nil {
 		buf.WriteString("\tDifferences In Values (Translation Might Still Be Correct):\n")
 		for _, d := range r.NumericDifferences {
-			buf.WriteString(fmt.Sprintf("\t\t- %s:\n\t\t\tShould Have:%v\n\t\t\tDoes Have:%v\n", d.Tag, d.Truth, d.Translation))
+			buf.WriteString(fmt.Sprintf("\t\t- %s:\n\t\t\tShould Have:\t%v\n\t\t\tDoes Have:\t%v\n", d.Tag, d.Truth, d.Translation))
 		}
 		buf.WriteString("\n")
 	}
