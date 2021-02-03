@@ -8,7 +8,8 @@ import (
 
 type (
 	localizedText struct {
-		Translations Translations `xml:"Replace"`
+		Replacements Translations `xml:"Replace"`
+		Rows         Translations `xml:"Row"`
 	}
 	gameDate struct {
 		LocalizedText localizedText `xml:"LocalizedText"`
@@ -60,6 +61,6 @@ func parseFile(filename string) (*File, error) {
 
 	return &File{
 		Filename:     filepath.Base(filename),
-		Translations: gd.LocalizedText.Translations,
+		Translations: append(gd.LocalizedText.Replacements, gd.LocalizedText.Rows...),
 	}, nil
 }
