@@ -94,7 +94,7 @@ func (r *Report) duplicatesCheck(f *File) {
 	// Count the occurrences of every tag.
 	for _, t := range f.Translations {
 		r.DuplicateTags[t.Tag]++
-		lang[t.Lang]++
+		lang[t.Lang()]++
 	}
 
 	// Only keep those entries that occur more than once.

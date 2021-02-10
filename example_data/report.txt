@@ -1,174 +1,13 @@
 english.xml:
-german.xml:
-	Invalid XML:
-		XML syntax error on line 198: attribute name without = in element
-
-korean.xml:
-	Multiple Language Tags Found:
-		- ko_KR
-		- en_US
-
-	Obsolete Translations:
-		- LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION
-		- LOC_TRAIT_LEADER_MAGNIFICENCES_DESCRIPTION
-
-	Missing Translations (Untranslated Entry):
-		- LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION
-
-	Differences In Values (Translation Might Still Be Correct):
-		- LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION:
-			Should Have:	[1 1 50 50]
-			Does Have:	[1 1 3 50 50]
-		- LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION:
-			Should Have:	[1 5]
-			Does Have:	[1 2 5]
-		- LOC_TRAIT_LEADER_SATYAGRAHA_EXPANSION2_DESCRIPTION:
-			Should Have:	[1 1 5]
-			Does Have:	[1 1 2 5]
-		- LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION:
-			Should Have:	[1 1 10 15]
-			Does Have:	[1 1 1 10 10 5 5]
-		- LOC_UNIT_ETHIOPIAN_OROMO_CAVALRY_DESCRIPTION:
-			Should Have:	[4]
-			Does Have:	[1 4]
-		- LOC_IMPROVEMENT_HACIENDA_DESCRIPTION:
-			Should Have:	[1 1 1 1 2]
-			Does Have:	[1 1 1 1 2 2 2]
-		- LOC_BUILDING_DAR_E_MEHR_EXPANSION2_DESCRIPTION:
-			Should Have:	[2]
-			Does Have:	[2 3]
-		- LOC_FEATURE_BERMUDA_TRIANGLE_DESCRIPTION:
-			Should Have:	[1]
-			Does Have:	[1 3]
-		- LOC_FEATURE_PAITITI_DESCRIPTION:
-			Should Have:	[1 1]
-			Does Have:	[1 1 3]
-		- LOC_BUILDING_SHOPPING_MALL_DESCRIPTION:
-			Should Have:	[6]
-			Does Have:	[1 6]
-		- LOC_BUILDING_PRASAT_DESCRIPTION:
-			Should Have:	[]
-			Does Have:	[1]
-		- LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION:
-			Should Have:	[20 50]
-			Does Have:	[1 20 50]
-		- LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION:
-			Should Have:	[]
-			Does Have:	[1]
-		- LOC_TRAIT_LEADER_RAVEN_KING_DESCRIPTION:
-			Should Have:	[1 1 2 3 75]
-			Does Have:	[1 1 1 2 3 75]
-		- LOC_DISTRICT_SEOWON_DESCRIPTION:
-			Should Have:	[1 2]
-			Does Have:	[1 1 2 2]
-		- LOC_DISTRICT_BATH_DESCRIPTION:
-			Should Have:	[1 1 2 2 6]
-			Does Have:	[1 1 2 2 2 6]
-		- LOC_DISTRICT_LAVRA_DESCRIPTION:
-			Should Have:	[]
-			Does Have:	[1 1]
-		- LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION:
-			Should Have:	[1 1 1 2]
-			Does Have:	[1 1 1 1 2]
-		- LOC_TRAIT_LEADER_LAST_BEST_WEST_DESCRIPTION:
-			Should Have:	[1 1 1 100 50 8 8]
-			Does Have:	[1 1 1 1 100 50 8 8]
-		- LOC_FEATURE_DEAD_SEA_DESCRIPTION:
-			Should Have:	[2 2 2]
-			Does Have:	[1 2 2 2]
-		- LOC_FEATURE_GOBUSTAN_DESCRIPTION:
-			Should Have:	[4 4]
-			Does Have:	[3 4 4]
-		- LOC_FEATURE_WHITEDESERT_DESCRIPTION:
-			Should Have:	[2 2 6]
-			Does Have:	[2 2 4 6]
-		- LOC_FEATURE_CHOCOLATEHILLS_DESCRIPTION:
-			Should Have:	[1 3 3]
-			Does Have:	[1 3 3 4]
-		- LOC_FEATURE_DEVILSTOWER_DESCRIPTION:
-			Should Have:	[1 2]
-			Does Have:	[1 1 2]
-		- LOC_TECH_COMPUTERS_DESCRIPTION:
-			Should Have:	[50]
-			Does Have:	[1 50]
-		- LOC_TRAIT_LEADER_EL_ESCORIAL_EXPANSION2_DESCRIPTION:
-			Should Have:	[100 30 4]
-			Does Have:	[1 100 30 4]
-		- LOC_TRAIT_LEADER_HELLENISTIC_FUSION_EXPANSION1_DESCRIPTION:
-			Should Have:	[10 20]
-			Does Have:	[1 1 10 20]
-		- LOC_TRAIT_LEADER_HELLENISTIC_FUSION_DESCRIPTION:
-			Should Have:	[10 20]
-			Does Have:	[1 1 10 20]
-		- LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_DESCRIPTION:
-			Should Have:	[20]
-			Does Have:	[10 20]
-		- LOC_BUILDING_TLACHTLI_DESCRIPTION:
-			Should Have:	[3]
-			Does Have:	[1 1 3]
-		- LOC_UNIT_GEORGIAN_KHEVSURETI_DESCRIPTION:
-			Should Have:	[1 5]
-			Does Have:	[5]
-		- LOC_TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES_DESCRIPTION:
-			Should Have:	[]
-			Does Have:	[1]
-		- LOC_TRAIT_CIVILIZATION_PLATOS_REPUBLIC_DESCRIPTION:
-			Should Have:	[]
-			Does Have:	[1 1]
-		- LOC_TRAIT_CIVILIZATION_KHMER_BARAYS_DESCRIPTION:
-			Should Have:	[1 2 2 2 3]
-			Does Have:	[1 2 2 3]
-		- LOC_TRAIT_CIVILIZATION_MOTHER_RUSSIA_DESCRIPTION:
-			Should Have:	[1 1]
-			Does Have:	[1 1 8]
-		- LOC_TRAIT_CIVILIZATION_MOTHER_RUSSIA_EXPANSION2_DESCRIPTION:
-			Should Have:	[1 1]
-			Does Have:	[1 1 100 8]
-		- LOC_IMPROVEMENT_ZIGGURAT_DESCRIPTION:
-			Should Have:	[1 1 1 2]
-			Does Have:	[1 1 1 2 2]
-		- LOC_DISTRICT_SEOWON_THEATER_BONUS:
-			Should Have:	[1]
-			Does Have:	[1 1 1]
-		- LOC_DISTRICT_THEATER_SEOWON_BONUS:
-			Should Have:	[1]
-			Does Have:	[1 1 1]
-
-russian.xml:
-	Invalid XML:
-		XML syntax error on line 948: element <LocalizedText> closed by </Replace>
-
-portuguese.xml:
-	Missing Translations (No Entry):
-		- LOC_GOVERNOR_PROMOTION_EDUCATOR_KNOWLEDGE_DESCRIPTION
-		- LOC_GOVERNOR_PROMOTION_EDUCATOR_KNOWLEDGE_NAME
-		- LOC_GOVERNOR_PROMOTION_EDUCATOR_EUREKA_NAME
-		- LOC_GOVERNOR_PROMOTION_EDUCATOR_EUREKA_DESCRIPTION
-		- LOC_GOVERNOR_PROMOTION_AMBASSADOR_NEGOTIATOR_NAME
-		- LOC_GOVERNOR_PROMOTION_AMBASSADOR_NEGOTIATOR_DESCRIPTION
-		- LOC_GOVERNOR_PROMOTION_MERCHANT_INVESTOR_NAME
-
-	Missing Translations (Untranslated Entry):
-		- LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION
-		- LOC_TRAIT_CIVILIZATION_MOTHER_RUSSIA_EXPANSION2_DESCRIPTION
-
-	Differences In Values (Translation Might Still Be Correct):
-		- LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION:
-			Should Have:	[100 15]
-			Does Have:	[15 50]
-		- LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_SIEGE_CHAPTER_HISTORY_PARA_1:
-			Should Have:	[1 200 60]
-			Does Have:	[1 58 60]
-
 chinese.xml:
 	Duplicate Entries:
-		- LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_EXPANSION2_DESCRIPTION: 2 times
-		- LOC_PROJECT_ECOURT_FESTIVAL_DESCRIPTION: 2 times
-		- LOC_TRAIT_CIVILIZATION_FIRST_CIVILIZATION_DESCRIPTION: 2 times
-		- LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_EXPANSION1_DESCRIPTION: 2 times
-		- LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION: 2 times
 		- LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_DESCRIPTION: 2 times
 		- LOC_IMPROVEMENT_ZIGGURAT_DESCRIPTION: 2 times
+		- LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_EXPANSION1_DESCRIPTION: 2 times
+		- LOC_TRAIT_CIVILIZATION_FIRST_CIVILIZATION_DESCRIPTION: 2 times
+		- LOC_PROJECT_ECOURT_FESTIVAL_DESCRIPTION: 2 times
+		- LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_EXPANSION2_DESCRIPTION: 2 times
+		- LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION: 2 times
 
 	Multiple Language Tags Found:
 		- zh_Hans_CN
@@ -585,6 +424,192 @@ french.xml:
 			Should Have:	[1914 1914 1914 1918 1918]
 			Does Have:	[]
 		- LOC_DISTRICT_SACREDPATH_WOODS_FAITH:
+			Should Have:	[1 1 1]
+			Does Have:	[1 1 1 1 1]
+
+korean.xml:
+	Multiple Language Tags Found:
+		- ko_KR
+		- en_US
+
+	Obsolete Translations:
+		- LOC_UNIT_SUMERIAN_WAR_CART_DESCRIPTION
+		- LOC_TRAIT_LEADER_MAGNIFICENCES_DESCRIPTION
+
+	Missing Translations (Untranslated Entry):
+		- LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION
+
+	Differences In Values (Translation Might Still Be Correct):
+		- LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION:
+			Should Have:	[1 1 50 50]
+			Does Have:	[1 1 3 50 50]
+		- LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION:
+			Should Have:	[1 5]
+			Does Have:	[1 2 5]
+		- LOC_TRAIT_LEADER_SATYAGRAHA_EXPANSION2_DESCRIPTION:
+			Should Have:	[1 1 5]
+			Does Have:	[1 1 2 5]
+		- LOC_TRAIT_CIVILIZATION_SCOTTISH_ENLIGHTENMENT_DESCRIPTION:
+			Should Have:	[1 1 10 15]
+			Does Have:	[1 1 1 10 10 5 5]
+		- LOC_UNIT_ETHIOPIAN_OROMO_CAVALRY_DESCRIPTION:
+			Should Have:	[4]
+			Does Have:	[1 4]
+		- LOC_IMPROVEMENT_HACIENDA_DESCRIPTION:
+			Should Have:	[1 1 1 1 2]
+			Does Have:	[1 1 1 1 2 2 2]
+		- LOC_BUILDING_DAR_E_MEHR_EXPANSION2_DESCRIPTION:
+			Should Have:	[2]
+			Does Have:	[2 3]
+		- LOC_FEATURE_BERMUDA_TRIANGLE_DESCRIPTION:
+			Should Have:	[1]
+			Does Have:	[1 3]
+		- LOC_FEATURE_PAITITI_DESCRIPTION:
+			Should Have:	[1 1]
+			Does Have:	[1 1 3]
+		- LOC_BUILDING_SHOPPING_MALL_DESCRIPTION:
+			Should Have:	[6]
+			Does Have:	[1 6]
+		- LOC_BUILDING_PRASAT_DESCRIPTION:
+			Should Have:	[]
+			Does Have:	[1]
+		- LOC_TRAIT_CIVILIZATION_WONDER_TOURISM_DESCRIPTION:
+			Should Have:	[20 50]
+			Does Have:	[1 20 50]
+		- LOC_GOVERNOR_PROMOTION_AMBASSADOR_AFFLUENCE_DESCRIPTION:
+			Should Have:	[]
+			Does Have:	[1]
+		- LOC_TRAIT_LEADER_RAVEN_KING_DESCRIPTION:
+			Should Have:	[1 1 2 3 75]
+			Does Have:	[1 1 1 2 3 75]
+		- LOC_DISTRICT_SEOWON_DESCRIPTION:
+			Should Have:	[1 2]
+			Does Have:	[1 1 2 2]
+		- LOC_DISTRICT_BATH_DESCRIPTION:
+			Should Have:	[1 1 2 2 6]
+			Does Have:	[1 1 2 2 2 6]
+		- LOC_DISTRICT_LAVRA_DESCRIPTION:
+			Should Have:	[]
+			Does Have:	[1 1]
+		- LOC_BUILDING_HUEY_TEOCALLI_DESCRIPTION:
+			Should Have:	[1 1 1 2]
+			Does Have:	[1 1 1 1 2]
+		- LOC_TRAIT_LEADER_LAST_BEST_WEST_DESCRIPTION:
+			Should Have:	[1 1 1 100 50 8 8]
+			Does Have:	[1 1 1 1 100 50 8 8]
+		- LOC_FEATURE_DEAD_SEA_DESCRIPTION:
+			Should Have:	[2 2 2]
+			Does Have:	[1 2 2 2]
+		- LOC_FEATURE_GOBUSTAN_DESCRIPTION:
+			Should Have:	[4 4]
+			Does Have:	[3 4 4]
+		- LOC_FEATURE_WHITEDESERT_DESCRIPTION:
+			Should Have:	[2 2 6]
+			Does Have:	[2 2 4 6]
+		- LOC_FEATURE_CHOCOLATEHILLS_DESCRIPTION:
+			Should Have:	[1 3 3]
+			Does Have:	[1 3 3 4]
+		- LOC_FEATURE_DEVILSTOWER_DESCRIPTION:
+			Should Have:	[1 2]
+			Does Have:	[1 1 2]
+		- LOC_TECH_COMPUTERS_DESCRIPTION:
+			Should Have:	[50]
+			Does Have:	[1 50]
+		- LOC_TRAIT_LEADER_EL_ESCORIAL_EXPANSION2_DESCRIPTION:
+			Should Have:	[100 30 4]
+			Does Have:	[1 100 30 4]
+		- LOC_TRAIT_LEADER_HELLENISTIC_FUSION_EXPANSION1_DESCRIPTION:
+			Should Have:	[10 20]
+			Does Have:	[1 1 10 20]
+		- LOC_TRAIT_LEADER_HELLENISTIC_FUSION_DESCRIPTION:
+			Should Have:	[10 20]
+			Does Have:	[1 1 10 20]
+		- LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_DESCRIPTION:
+			Should Have:	[20]
+			Does Have:	[10 20]
+		- LOC_BUILDING_TLACHTLI_DESCRIPTION:
+			Should Have:	[3]
+			Does Have:	[1 1 3]
+		- LOC_UNIT_GEORGIAN_KHEVSURETI_DESCRIPTION:
+			Should Have:	[1 5]
+			Does Have:	[5]
+		- LOC_TRAIT_CIVILIZATION_IMPERIAL_FREE_CITIES_DESCRIPTION:
+			Should Have:	[]
+			Does Have:	[1]
+		- LOC_TRAIT_CIVILIZATION_PLATOS_REPUBLIC_DESCRIPTION:
+			Should Have:	[]
+			Does Have:	[1 1]
+		- LOC_TRAIT_CIVILIZATION_KHMER_BARAYS_DESCRIPTION:
+			Should Have:	[1 2 2 2 3]
+			Does Have:	[1 2 2 3]
+		- LOC_TRAIT_CIVILIZATION_MOTHER_RUSSIA_DESCRIPTION:
+			Should Have:	[1 1]
+			Does Have:	[1 1 8]
+		- LOC_TRAIT_CIVILIZATION_MOTHER_RUSSIA_EXPANSION2_DESCRIPTION:
+			Should Have:	[1 1]
+			Does Have:	[1 1 100 8]
+		- LOC_IMPROVEMENT_ZIGGURAT_DESCRIPTION:
+			Should Have:	[1 1 1 2]
+			Does Have:	[1 1 1 2 2]
+		- LOC_DISTRICT_SEOWON_THEATER_BONUS:
+			Should Have:	[1]
+			Does Have:	[1 1 1]
+		- LOC_DISTRICT_THEATER_SEOWON_BONUS:
+			Should Have:	[1]
+			Does Have:	[1 1 1]
+
+german.xml:
+	Multiple Language Tags Found:
+		- de_DE
+		- de
+
+	Differences In Values (Translation Might Still Be Correct):
+		- LOC_TRAIT_LEADER_RAVEN_KING_DESCRIPTION:
+			Should Have:	[1 1 2 3 75]
+			Does Have:	[1 1 1 3 75]
+		- LOC_DISTRICT_TUNDRA_FAITH:
+			Should Have:	[1 1 1]
+			Does Have:	[1]
+		- LOC_DISTRICT_BATH_EXPANSION2_DESCRIPTION:
+			Should Have:	[1 1 1 2 2 2 6]
+			Does Have:	[1 1 1 2 2 6]
+		- LOC_DISTRICT_BATH_EXPANSION2_ALT_DESCRIPTION:
+			Should Have:	[1 1 1 2 2 2 6]
+			Does Have:	[1 1 1 2 2 6]
+		- LOC_DISTRICT_BATH_DESCRIPTION:
+			Should Have:	[1 1 2 2 6]
+			Does Have:	[1 1 2 6]
+		- LOC_PROJECT_LAUNCH_MOON_LANDING_POPUP:
+			Should Have:	[5]
+			Does Have:	[]
+		- LOC_PROJECT_LAUNCH_MOON_LANDING_DESCRIPTION:
+			Should Have:	[5]
+			Does Have:	[]
+		- LOC_POLICY_FORCE_MODERNIZATION_DESCRIPTION:
+			Should Have:	[50 50]
+			Does Have:	[50]
+		- LOC_BUILDING_TLACHTLI_DESCRIPTION:
+			Should Have:	[3]
+			Does Have:	[1 1 3]
+		- LOC_UNIT_GEORGIAN_KHEVSURETI_DESCRIPTION:
+			Should Have:	[1 5]
+			Does Have:	[5]
+		- LOC_TRAIT_LEADER_RELIGION_CITY_STATES_DESCRIPTION:
+			Should Have:	[50]
+			Does Have:	[2 50]
+		- LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_SIEGE_CHAPTER_HISTORY_PARA_1:
+			Should Have:	[1 200 60]
+			Does Have:	[60]
+		- LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_TRENCH_WARFARE_CHAPTER_HISTORY_PARA_1:
+			Should Have:	[1914 1914 1914 1918 1918]
+			Does Have:	[000 1 1914 1914 1916 1918 1939 1945 2 700]
+		- LOC_CIVILIZATION_NAN_MADOL_BONUS:
+			Should Have:	[1 1]
+			Does Have:	[1 2]
+		- LOC_DISTRICT_SACREDPATH_WOODS_FAITH:
+			Should Have:	[1 1 1]
+			Does Have:	[1]
+		- LOC_DISTRICT_MINE_SCIENCE:
 			Should Have:	[1 1 1]
 			Does Have:	[1 1 1 1 1]
 
@@ -1158,4 +1183,102 @@ polish.xml:
 		- LOC_DISTRICT_SACREDPATH_WOODS_FAITH:
 			Should Have:	[1 1 1]
 			Does Have:	[1]
+
+portuguese.xml:
+	Missing Translations (No Entry):
+		- LOC_GOVERNOR_PROMOTION_EDUCATOR_KNOWLEDGE_DESCRIPTION
+		- LOC_GOVERNOR_PROMOTION_EDUCATOR_KNOWLEDGE_NAME
+		- LOC_GOVERNOR_PROMOTION_EDUCATOR_EUREKA_NAME
+		- LOC_GOVERNOR_PROMOTION_EDUCATOR_EUREKA_DESCRIPTION
+		- LOC_GOVERNOR_PROMOTION_AMBASSADOR_NEGOTIATOR_NAME
+		- LOC_GOVERNOR_PROMOTION_AMBASSADOR_NEGOTIATOR_DESCRIPTION
+		- LOC_GOVERNOR_PROMOTION_MERCHANT_INVESTOR_NAME
+
+	Missing Translations (Untranslated Entry):
+		- LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION
+		- LOC_TRAIT_CIVILIZATION_MOTHER_RUSSIA_EXPANSION2_DESCRIPTION
+
+	Differences In Values (Translation Might Still Be Correct):
+		- LOC_GOVERNOR_PROMOTION_CARDINAL_BISHOP_DESCRIPTION:
+			Should Have:	[100 15]
+			Does Have:	[15 50]
+		- LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_SIEGE_CHAPTER_HISTORY_PARA_1:
+			Should Have:	[1 200 60]
+			Does Have:	[1 58 60]
+
+russian.xml:
+	Multiple Language Tags Found:
+		- ru_RU
+		- en_US
+
+	Differences In Values (Translation Might Still Be Correct):
+		- LOC_TRAIT_CIVILIZATION_NOBEL_PRIZE_DESCRIPTION:
+			Should Have:	[1 1 50 50]
+			Does Have:	[1 1 3 50 50]
+		- LOC_TRAIT_LEADER_SATYAGRAHA_DESCRIPTION:
+			Should Have:	[1 5]
+			Does Have:	[1 2 5]
+		- LOC_TRAIT_LEADER_SATYAGRAHA_EXPANSION2_DESCRIPTION:
+			Should Have:	[1 1 5]
+			Does Have:	[1 1 2 5]
+		- LOC_BUILDING_GOV_CITYSTATES_EXPANSION2_DESCRIPTION:
+			Should Have:	[1 2 2 3 4]
+			Does Have:	[1 2 2 2 3 4]
+		- LOC_UNIT_ETHIOPIAN_OROMO_CAVALRY_DESCRIPTION:
+			Should Have:	[4]
+			Does Have:	[1 4]
+		- LOC_FEATURE_BARRIER_REEF_DESCRIPTION:
+			Should Have:	[2 3]
+			Does Have:	[2 2 3]
+		- LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_DESCRIPTION:
+			Should Have:	[1 1 50 60]
+			Does Have:	[1 1 40 60]
+		- LOC_TRAIT_LEADER_FLYING_SQUADRON_DESCRIPTION:
+			Should Have:	[1]
+			Does Have:	[]
+		- LOC_DISTRICT_BATH_DESCRIPTION:
+			Should Have:	[1 1 2 2 6]
+			Does Have:	[1 1 2 2 2 6]
+		- LOC_DISTRICT_LAVRA_DESCRIPTION:
+			Should Have:	[]
+			Does Have:	[1]
+		- LOC_BUILDING_GOV_CITYSTATES_DESCRIPTION:
+			Should Have:	[1 2 2 4]
+			Does Have:	[1 2 2 2 4]
+		- LOC_UNIT_CANADA_MOUNTIE_DESCRIPTION:
+			Should Have:	[4 4 5 5]
+			Does Have:	[4 5 5]
+		- LOC_IMPROVEMENT_CHATEAU_DESCRIPTION:
+			Should Have:	[1 1 1 1 1 2]
+			Does Have:	[1 1 1 1 2]
+		- LOC_IMPROVEMENT_CHATEAU_EXPANSION2_DESCRIPTION:
+			Should Have:	[1 1 1 1 1 2]
+			Does Have:	[1 1 1 1 2]
+		- LOC_TRAIT_LEADER_EL_ESCORIAL_EXPANSION2_DESCRIPTION:
+			Should Have:	[100 30 4]
+			Does Have:	[1 100 30 4]
+		- LOC_UNIT_MACEDONIAN_HETAIROI_DESCRIPTION:
+			Should Have:	[1 5 5]
+			Does Have:	[5 5]
+		- LOC_BUILDING_TLACHTLI_DESCRIPTION:
+			Should Have:	[3]
+			Does Have:	[1 3]
+		- LOC_UNIT_CHINESE_CROUCHING_TIGER_DESCRIPTION:
+			Should Have:	[7]
+			Does Have:	[2 7]
+		- LOC_TRAIT_CIVILIZATION_PLATOS_REPUBLIC_DESCRIPTION:
+			Should Have:	[]
+			Does Have:	[1]
+		- LOC_IMPROVEMENT_KURGAN_DESCRIPTION:
+			Should Have:	[1 1 1 1]
+			Does Have:	[1 1 1]
+		- LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_DESCRIPTION:
+			Should Have:	[25]
+			Does Have:	[2 25]
+		- LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_EXPANSION1_DESCRIPTION:
+			Should Have:	[25]
+			Does Have:	[2 25]
+		- LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_EXPANSION2_DESCRIPTION:
+			Should Have:	[25]
+			Does Have:	[2 25]
 
