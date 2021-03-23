@@ -1,7 +1,9 @@
 package checker
 
+// key: translation tag
 type Duplicates map[string]int
 
+// Only keep those entries that occur more than once.
 func (d Duplicates) cleaned() Duplicates {
 	if len(d) == 0 {
 		return nil
@@ -22,14 +24,14 @@ func (d Duplicates) cleaned() Duplicates {
 	return r
 }
 
-func (d Duplicates) keys() []string {
-	ks := make([]string, len(d))
-
-	i := 0
-	for k := range d {
-		ks[i] = k
-		i++
+// Return the key with the highest count
+func (d Duplicates) highest() string {
+	var h string
+	for t, c := range d {
+		if h == "" || c > d[h] {
+			h = t
+		}
 	}
 
-	return ks
+	return h
 }

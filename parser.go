@@ -4,6 +4,7 @@ import (
 	"encoding/xml"
 	"io/ioutil"
 	"path/filepath"
+	"strings"
 )
 
 type (
@@ -11,12 +12,13 @@ type (
 		Replacements Translations `xml:"Replace"`
 		Rows         Translations `xml:"Row"`
 	}
-	gameDate struct {
+	gameData struct {
+		XMLName       string        `xml:"GameData"`
 		LocalizedText localizedText `xml:"LocalizedText"`
 	}
 )
 
-func Parse(truth string, dir string) (*File, []*File, error) {
+func Parse(truth, dir, only string) (*File, []*File, error) {
 	// Truth
 	t, err := parseFile(filepath.Join(dir, truth))
 	if err != nil {
@@ -31,7 +33,7 @@ func Parse(truth string, dir string) (*File, []*File, error) {
 
 	ts := make([]*File, 0)
 	for _, f := range fs {
-		if f.Name() != truth && filepath.Ext(f.Name()) == ".xml" {
+		if f.Name() != truth && !strings.Contains(f.Name(), "_commented") && filepath.Ext(f.Name()) == ".xml" && (only == "" || f.Name() == only) {
 			t, err := parseFile(filepath.Join(dir, f.Name()))
 			if err != nil {
 				return nil, nil, err
@@ -50,7 +52,7 @@ func parseFile(filename string) (*File, error) {
 		return nil, err
 	}
 
-	gd := new(gameDate)
+	gd := new(gameData)
 	err = xml.Unmarshal(b, gd)
 	if err != nil {
 		return &File{
@@ -62,5 +64,7 @@ func parseFile(filename string) (*File, error) {
 	return &File{
 		Filename:     filepath.Base(filename),
 		Translations: append(gd.LocalizedText.Replacements, gd.LocalizedText.Rows...),
+		rows:         gd.LocalizedText.Rows,
+		replacements: gd.LocalizedText.Replacements,
 	}, nil
 }

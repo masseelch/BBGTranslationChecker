@@ -24,8 +24,8 @@ type (
 		DuplicateTags Duplicates
 		// All tags that occur in the translation file but not the truth.
 		ObsoleteTags []string
-		// All found language declarations.
-		LanguageTags []string
+		// All found language declarations. [tag -> count]
+		LanguageTags Duplicates
 		// Tags that do not appear in the given file but do in the truth.
 		MissingTags []string
 		// Tags do appear in the given file but are not translated yet (prefixed with "To Translate")
@@ -41,12 +41,13 @@ func Check(tf *File, cfs []*File) (Reports, error) {
 	var err error
 	rs := make(Reports)
 
-	// Collect the report for every translation.
+	// Collect (limited) reports for the truth
 	rs[tf.Filename], err = report(nil, tf)
 	if err != nil {
 		return nil, err
 	}
 
+	// Collect the report for every translation.
 	for _, cf := range cfs {
 		rs[cf.Filename], err = report(tf, cf)
 		if err != nil {
@@ -89,19 +90,16 @@ func report(tf *File, cf *File) (*Report, error) {
 func (r *Report) duplicatesCheck(f *File) {
 	// duplicate tags / lang
 	r.DuplicateTags = make(Duplicates)
-	lang := make(Duplicates)
+	r.LanguageTags = make(Duplicates)
 
 	// Count the occurrences of every tag.
 	for _, t := range f.Translations {
 		r.DuplicateTags[t.Tag]++
-		lang[t.Lang()]++
+		r.LanguageTags[t.Lang()]++
 	}
 
 	// Only keep those entries that occur more than once.
 	r.DuplicateTags = r.DuplicateTags.cleaned()
-
-	// Add every found lang to the report
-	r.LanguageTags = lang.keys()
 }
 
 func (r *Report) obsoletesCheck(tf *File, cf *File) {
