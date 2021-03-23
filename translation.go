@@ -11,6 +11,7 @@ type (
 		LangUpper string `xml:"Language,attr"`
 		LangLower string `xml:"language,attr"`
 		Message   string `xml:"Text"`
+		Comment   string `xml:",comment"`
 	}
 	Translations []Translation
 )
