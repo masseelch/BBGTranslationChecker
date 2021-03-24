@@ -130,12 +130,14 @@ func (r *Report) translationsCheck(tf *File, cf *File) {
 	for _, tt := range tf.Translations {
 		ct := cf.Translations.LookupByTag(tt.Tag)
 
-		// Does a translation exist.
+		// If the tag is not found mark it and skip to the next entry.
 		if ct == nil {
 			r.MissingTags = append(r.MissingTags, tt.Tag)
 			continue
 		}
 
+		// If the translation exists but has the translationMarker still present we report that and
+		// won't check for numeric differences.
 		if strings.Contains(strings.ToLower(ct.Message), translationMarker) {
 			r.MissingTranslations = append(r.MissingTranslations, tt.Tag)
 		}

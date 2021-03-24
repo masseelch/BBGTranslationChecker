@@ -46,7 +46,7 @@ func (t *Translation) AddReportToComment(r string) {
 	t.Comment += fmt.Sprintf("\t\t%s\n\t\t\t", r)
 }
 
-func (t *Translation) Copy() *Translation {
+func (t Translation) Copy() *Translation {
 	return &Translation{
 		Comment:   t.Comment,
 		Tag:       t.Tag,

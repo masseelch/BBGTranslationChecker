@@ -5,12 +5,13 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
 var (
 	rootCmd = &cobra.Command{
-		Use:   "bbg-translation-checker -s /path/to/lang/dir -o /path/to/result/file",
+		Use:   "bbg-translation-checker -s /path/to/lang/dir",
 		Short: "cli tool to check CPL's BBG translation for possible errors",
 		Run: func(cmd *cobra.Command, args []string) {
 			t, ts, err := checker.Parse(viper.GetString("truth"), viper.GetString("source"), viper.GetString("only"))
@@ -25,7 +26,7 @@ var (
 			}
 
 			// Dump summary to a reports.txt file.
-			f, err := os.Create("report.txt")
+			f, err := os.Create(filepath.Join(viper.GetString("output"), "reports.txt"))
 			if err != nil {
 				panic(err)
 			}
@@ -36,7 +37,7 @@ var (
 
 			// If the 'overwrite' flag is set to true we change the original file and add our report
 			// to the entries in form of a comment.
-			if err := rs.DumpWithComments(t); err != nil {
+			if err := rs.DumpWithComments(t, viper.GetString("output")); err != nil {
 				panic(err)
 			}
 		},
@@ -47,6 +48,7 @@ func init() {
 	cobra.OnInitialize(initConfig)
 
 	rootCmd.Flags().String("source", ".", "/path/to/lang/dir")
+	rootCmd.Flags().String("output", ".", "/path/to/output/dir")
 	rootCmd.Flags().String("truth", "english.xml", "file of truth")
 	rootCmd.Flags().String("only", "", "Filename to check. If empty all files are checked")
 

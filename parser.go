@@ -61,9 +61,13 @@ func parseFile(filename string) (*File, error) {
 		}, nil
 	}
 
+	trs := make(Translations, len(gd.LocalizedText.Replacements), len(gd.LocalizedText.Replacements)+len(gd.LocalizedText.Rows))
+	_ = copy(trs, gd.LocalizedText.Replacements)
+	trs = append(trs, gd.LocalizedText.Rows...)
+
 	return &File{
 		Filename:     filepath.Base(filename),
-		Translations: append(gd.LocalizedText.Replacements, gd.LocalizedText.Rows...),
+		Translations: trs,
 		rows:         gd.LocalizedText.Rows,
 		replacements: gd.LocalizedText.Replacements,
 	}, nil

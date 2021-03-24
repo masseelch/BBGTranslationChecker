@@ -7,12 +7,24 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 )
 
+func (rs Reports) OrderedKeys() []string {
+	ks := make([]string, 0, len(rs))
+	for k := range rs {
+		ks = append(ks, k)
+	}
+
+	sort.Strings(ks)
+
+	return ks
+}
+
 func (rs Reports) DumpSummary(w io.Writer) error {
-	for _, r := range rs {
-		if _, err := w.Write(r.dumpSummary()); err != nil {
+	for _, k := range rs.OrderedKeys() {
+		if _, err := w.Write(rs[k].dumpSummary()); err != nil {
 			return err
 		}
 	}
@@ -20,11 +32,11 @@ func (rs Reports) DumpSummary(w io.Writer) error {
 	return nil
 }
 
-func (rs Reports) DumpWithComments(tf *File) error {
-	for _, r := range rs {
+func (rs Reports) DumpWithComments(tf *File, o string) error {
+	for _, k := range rs.OrderedKeys() {
 		// Skip the truth
-		if r.File.Filename != tf.Filename {
-			if err := r.dumpWithComments(tf); err != nil {
+		if rs[k].File.Filename != tf.Filename {
+			if err := rs[k].dumpWithComments(tf, o); err != nil {
 				return err
 			}
 		}
@@ -108,10 +120,10 @@ func (r Report) dumpSummary() []byte {
 	return buf.Bytes()
 }
 
-func (r Report) dumpWithComments(tf *File) error {
+func (r Report) dumpWithComments(tf *File, o string) error {
 	ext := filepath.Ext(r.File.Filename)
 
-	f, err := os.Create(strings.TrimSuffix(r.File.Filename, ext) + "_commented" + ext)
+	f, err := os.Create(filepath.Join(o, strings.TrimSuffix(r.File.Filename, ext)+"_commented"+ext))
 	if err != nil {
 		return err
 	}
@@ -160,23 +172,24 @@ func (r Report) dumpWithComments(tf *File) error {
 	}
 
 	// MissingTags
-	// If there a translations missing, we add them to the translation. The original Text gets
-	// prefixed with 'TO TRANSLATE' and a comment is added, that this entry still needs translation.
+	// If there is a translations missing completely, we add them to the translation.
+	// The original Text gets prefixed with 'TO TRANSLATE' and a comment is added, that this entry still needs translation.
 	if r.MissingTags != nil {
 		for _, t := range r.MissingTags {
 			// Lookup the original translation and add a copy of the original to
 			// the file we are editing.
 			tr := tf.rows.LookupByTag(t)
 			if tr != nil {
+				tr = tr.Copy()
 				r.File.rows = append(r.File.rows, tr)
 			} else {
-				tr = tf.replacements.LookupByTag(t)
+				tr = tf.replacements.LookupByTag(t).Copy()
 				r.File.replacements = append(r.File.replacements, tr)
 			}
 			r.File.Translations = append(r.File.Translations, tr)
 
 			// Prefix the message with a 'TO TRANSLATE' notice. Add a comment.
-			tr.Message = "[COLOR_RED]TO_TRANSLATE: " + tr.Message
+			tr.Message = fmt.Sprintf("[COLOR_RED]%s: %s", strings.ToUpper(translationMarker), tr.Message)
 			tr.AddReportToComment("- This tag has no translation yet")
 		}
 	}
