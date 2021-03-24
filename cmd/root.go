@@ -25,6 +25,11 @@ var (
 				panic(err)
 			}
 
+			// Create output dir if not existing yet.
+			if err := os.MkdirAll(viper.GetString("output"), 0755); err != nil {
+				panic(err)
+			}
+
 			// Dump summary to a reports.txt file.
 			f, err := os.Create(filepath.Join(viper.GetString("output"), "reports.txt"))
 			if err != nil {
